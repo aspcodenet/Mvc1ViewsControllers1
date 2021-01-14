@@ -7,6 +7,18 @@ namespace Mvc1ViewsControllers1.Controllers
     public class HelloController : Controller
     {
 
+        //Hello/RandomNumber
+        private static Random rnd = new Random();
+        public IActionResult RandomNumber()
+        {
+            var viewModel = new HelloRandomNumberViewModel();
+            viewModel.Number = rnd.Next(1, 11);
+
+            return View(viewModel);
+        }
+
+
+
 
         // GET
         public IActionResult ViewHello()

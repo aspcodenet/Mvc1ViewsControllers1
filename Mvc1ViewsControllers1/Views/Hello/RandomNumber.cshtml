@@ -1,0 +1,60 @@
+﻿@using Microsoft.AspNetCore.Mvc.ModelBinding
+@model Mvc1ViewsControllers1.ViewModels.HelloRandomNumberViewModel
+
+
+@{
+    ViewData["Title"] = "Blää asdasd";
+
+
+    var message = "";
+}
+
+
+
+@if (Model.Number >= 1 && Model.Number <= 3)
+{
+
+    if (Model.Number == 1)
+    {
+        <span>Hoho</span>
+    }
+
+    <text>
+    Talet är mellan 1 och 3:  @Model.Number
+    </text>
+}
+else if (Model.Number >= 4 && Model.Number <= 6)
+{
+    <text>
+    Talet är mellan 4 och 6:  @Model.Number
+    </text>
+}
+else if (Model.Number >= 7 && Model.Number <= 10)
+{
+    <text>
+        Talet är mellan 7 och 10:  @Model.Number
+    </text>
+}
+
+
+
+
+
+@if (Model.Number >= 1 && Model.Number <= 3)
+{
+    message = "Talet är mellan 1 och 3: " + Model.Number;
+}
+else if (Model.Number >= 4 && Model.Number <= 6)
+{
+    message = "Talet är mellan 4 och 6: " + Model.Number;
+}
+else if (Model.Number >= 7 && Model.Number <= 10)
+{
+    message = "Talet är mellan 7 och 10: " + Model.Number;
+}
+
+
+<div>@message</div>
+
+
+

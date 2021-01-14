@@ -1,0 +1,64 @@
+﻿@model Mvc1ViewsControllers1.ViewModels.SupplierEditViewModel
+
+
+@{
+    ViewData["Title"] = "Blää asdasd";
+    int b = 99;
+    var s = "asddsads";
+}
+
+<hr />
+
+<select>
+    @foreach (var color in Model.Colors)
+    {
+        <option value="@color">@color</option>
+    }
+</select>
+
+<hr/>
+
+@{
+    b = b + 1;
+
+
+    var klocka = DateTime.Now.Hour;
+
+
+}
+
+
+@if (klocka > 13)
+{
+    <h2>God eftermiddag</h2>
+}
+else
+{
+    <h2>God morgon</h2>
+}
+
+
+<h1>Ja men nu i Edit på supplier @b</h1>
+
+<ul>
+    @for (int i = 1968; i < 1974; i++)
+    {
+
+        <li class="@(i == 1972 ? "alert-dark" : "alert-warning")">@i</li>
+
+
+        @*if (i == 1972)
+            {
+                <li class="alert-dark">@i</li>
+            }
+            else
+            {
+                <li class="alert-warning">@i</li>
+            }*@
+    }
+</ul>
+
+
+@Model.Message
+
+<b>Hej hopp</b>
