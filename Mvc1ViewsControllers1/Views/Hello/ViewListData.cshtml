@@ -1,0 +1,18 @@
+﻿@using Microsoft.AspNetCore.Mvc.ModelBinding
+@model Mvc1ViewsControllers1.ViewModels.HelloViewListDataViewModel
+
+
+
+
+@{
+    ViewData["Title"] = "Blää asdasd";
+}
+
+<ul>
+    @foreach (var c in Model.Colors)
+    {
+        <li>@c</li>
+    }
+</ul>
+
+

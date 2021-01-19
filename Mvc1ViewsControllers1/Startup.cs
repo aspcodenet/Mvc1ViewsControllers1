@@ -48,6 +48,12 @@ namespace Mvc1ViewsControllers1
 
             app.UseEndpoints(endpoints =>
             {
+                //   /tiden
+                endpoints.MapControllerRoute(
+                    name: "tid",
+                    pattern: "/tiden",
+                    new {controller="Hello", action="UpdateDateTime"});
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
