@@ -1,0 +1,20 @@
+﻿@using Microsoft.AspNetCore.Mvc.ModelBinding
+@model Mvc1ViewsControllers1.ViewModels.NewsIndexViewModel
+
+
+
+
+@{
+    ViewData["Title"] = "Senaste news!";
+}
+
+
+@foreach (var newsArticle in Model.Items)
+{
+<h1>
+    @newsArticle.Headline
+</h1>
+    @newsArticle.Text
+    <a asp-controller="News" asp-action="Details" asp-route-id="@newsArticle.Id" >Read more</a>
+    <img src="~/img/news-@(newsArticle.Id).jpg" />
+}

@@ -8,5 +8,7 @@ namespace Mvc1ViewsControllers1.ViewModels
         public int Id { get; set; }
 
         public List<string> Colors { get; set; } = new List<string>();
+
+
     }
 }

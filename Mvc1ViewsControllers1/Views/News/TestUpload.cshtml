@@ -1,0 +1,15 @@
+﻿@model Mvc1ViewsControllers1.ViewModels.TestUploadViewModel
+
+
+<form enctype="multipart/form-data" method="post">
+    <dl>
+        <dt>
+            <label asp-for="FileUpload"></label>
+        </dt>
+        <dd>
+            <input asp-for="FileUpload" type="file">
+            <span asp-validation-for="FileUpload"></span>
+        </dd>
+    </dl>
+    <input type="submit" value="Upload"/>
+</form>

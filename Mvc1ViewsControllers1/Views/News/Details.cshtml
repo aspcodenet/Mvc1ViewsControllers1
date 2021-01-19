@@ -1,0 +1,15 @@
+﻿@using Microsoft.AspNetCore.Mvc.ModelBinding
+@model Mvc1ViewsControllers1.ViewModels.NewsDetailsViewModel
+
+
+
+
+@{
+    ViewData["Title"] = Model.Headline;
+}
+
+
+<h1>@Model.Headline</h1>
+<small>
+    @Model.NewsText
+</small>
