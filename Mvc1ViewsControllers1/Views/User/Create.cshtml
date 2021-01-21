@@ -1,0 +1,34 @@
+﻿@model Mvc1ViewsControllers1.ViewModels.UserCreateViewModel
+
+
+@{
+    ViewData["Title"] = "Registrera dig";
+}
+
+<form asp-controller="User" asp-action="Create">
+    <div class="form-group">
+        <input asp-for="EmailAddress" class="form-control" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+        <label asp-for="FirstName">First name</label>
+        <input asp-for="FirstName" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName">Last name</label>
+        <input asp-for="LastName" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Password">Password</label>
+        <input asp-for="Password" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="ConfirmPassword">Password again</label>
+        <input asp-for="ConfirmPassword" class="form-control">
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" asp-for="SendMeUpdates">
+        <label class="form-check-label" asp-for="SendMeUpdates">Send med important updates</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
