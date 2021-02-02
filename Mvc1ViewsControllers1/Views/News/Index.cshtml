@@ -15,6 +15,6 @@
     @newsArticle.Headline
 </h1>
     @newsArticle.Text
-    <a asp-controller="News" asp-action="Details" asp-route-id="@newsArticle.Id" >Read more</a>
+    <a asp-controller="News" asp-action="Details" asp-route-id="@newsArticle.Id"  >Read more</a>
     <img src="~/img/news-@(newsArticle.Id).jpg" />
 }

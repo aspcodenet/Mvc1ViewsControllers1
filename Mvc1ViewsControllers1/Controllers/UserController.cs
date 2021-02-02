@@ -17,6 +17,7 @@ namespace Mvc1ViewsControllers1.Controllers
         public IActionResult Create()
         {
             var viewModel = new UserCreateViewModel();
+            viewModel.CurrentPhase = 1;
             return View(viewModel);
         }
 
@@ -25,10 +26,8 @@ namespace Mvc1ViewsControllers1.Controllers
         {
             if (ModelState.IsValid)
             {
-                //Spara nu anv i databasen
-
-                return RedirectToAction("RegisterConfirmation");
-
+                model.CurrentPhase = model.CurrentPhase + 1;
+                return View(model);
             }
 
             return View(model);

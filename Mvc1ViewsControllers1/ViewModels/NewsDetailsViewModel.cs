@@ -4,6 +4,7 @@
     {
         public string Headline { get; set; }
         public string NewsText { get; set; }
+        public int CurrentGrade { get; set; }
 
     }
 }

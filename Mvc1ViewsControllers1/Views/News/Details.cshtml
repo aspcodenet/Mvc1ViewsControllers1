@@ -13,3 +13,9 @@
 <small>
     @Model.NewsText
 </small>
+Denna artikel har fått betyg: @Model.CurrentGrade
+
+@if (Model.CurrentGrade > 3)
+{
+    <text>POPULÄR</text>
+}

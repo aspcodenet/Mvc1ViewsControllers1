@@ -1,34 +1,78 @@
-﻿@model Mvc1ViewsControllers1.ViewModels.UserCreateViewModel
+﻿@using Microsoft.AspNetCore.Mvc.ModelBinding
+@model Mvc1ViewsControllers1.ViewModels.UserCreateViewModel
 
 
 @{
     ViewData["Title"] = "Registrera dig";
 }
 
-<form asp-controller="User" asp-action="Create">
-    <div class="form-group">
-        <input asp-for="EmailAddress" class="form-control" placeholder="Enter email">
-    </div>
-    <div class="form-group">
-        <label asp-for="FirstName">First name</label>
-        <input asp-for="FirstName" class="form-control">
-    </div>
-    <div class="form-group">
-        <label asp-for="LastName">Last name</label>
-        <input asp-for="LastName" class="form-control">
-    </div>
-    <div class="form-group">
-        <label asp-for="Password">Password</label>
-        <input asp-for="Password" class="form-control">
-    </div>
-    <div class="form-group">
-        <label asp-for="ConfirmPassword">Password again</label>
-        <input asp-for="ConfirmPassword" class="form-control">
-    </div>
+@if (Model.CurrentPhase == 1)
+{
+    <h1>Mata in grunduppgifter</h1>
+    <form asp-controller="User" asp-action="Create">
+        <div class="form-group">
+            <input asp-for="EmailAddress" class="form-control" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label asp-for="FirstName">First name</label>
+            <input asp-for="FirstName" class="form-control">
+        </div>
+        <div class="form-group">
+            <label asp-for="LastName">Last name</label>
+            <input asp-for="LastName" class="form-control">
+        </div>
+        <div class="form-group">
+            <label asp-for="Password">Password</label>
+            <input asp-for="Password" class="form-control">
+        </div>
+        <div class="form-group">
+            <label asp-for="ConfirmPassword">Password again</label>
+            <input asp-for="ConfirmPassword" class="form-control">
+        </div>
 
-    <div class="form-check">
-        <input class="form-check-input" asp-for="SendMeUpdates">
-        <label class="form-check-label" asp-for="SendMeUpdates">Send med important updates</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+        <div class="form-check">
+            <input class="form-check-input" asp-for="SendMeUpdates">
+            <label class="form-check-label" asp-for="SendMeUpdates">Send med important updates</label>
+        </div>
+
+
+        <div class="form-group">
+            <input class="form-control" asp-for="CurrentPhase">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Nästa</button>
+    </form>
+}
+
+
+
+@if (Model.CurrentPhase == 2)
+{
+    <h1>Mata in var du bor</h1>
+    <form asp-controller="User" asp-action="Create">
+        <div class="form-group">
+            <label asp-for="City">Stad</label>
+            <input asp-for="City" class="form-control">
+        </div>
+        <div class="form-group">
+            <input class="form-control" asp-for="CurrentPhase">
+        </div>
+        <button type="submit" class="btn btn-primary">Nästa</button>
+    </form>
+}
+
+@if (Model.CurrentPhase == 3)
+{
+    <h1>Mata in leveranssätt</h1>
+    <form asp-controller="User" asp-action="Create">
+        <div class="form-group">
+            <label asp-for="DeliveryMethod">DeliveryMethod</label>
+            <input asp-for="DeliveryMethod" class="form-control">
+        </div>
+        <div class="form-group">
+            <input class="form-control" asp-for="CurrentPhase">
+        </div>
+        <button type="submit" class="btn btn-primary">Nästa</button>
+    </form>
+}
+

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Mvc1ViewsControllers1.ViewModels
 {
@@ -16,6 +17,16 @@ namespace Mvc1ViewsControllers1.ViewModels
         public string ConfirmPassword { get; set; }
 
         public bool SendMeUpdates { get; set; }
+
+
+        //STeg 2 regga stad
+        public string City { get; set; }
+
+        //STEG 3 välj leveranssätt 
+        public string DeliveryMethod { get; set; }
+
+        [HiddenInput]
+        public int CurrentPhase { get; set; }
 
     }
 }

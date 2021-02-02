@@ -1,0 +1,36 @@
+﻿@model Mvc1ViewsControllers1.ViewModels.QuestionSendViewModel
+
+
+@{
+    ViewData["Title"] = "Registrera dig";
+}
+
+@if (Model.ShowTheForm == false)
+{
+
+    <h1>”Thanks for your question:” </h1>
+    <text>
+        Vi kontakmtar
+        dig på</text>
+    @Model.Email
+    <text>angående </text>
+
+    @Model.Text
+}
+else
+{
+
+    <form asp-controller="Question" asp-action="Send">
+        <div class="form-group">
+            <input asp-for="Email" class="form-control" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label asp-for="Text">Text</label>
+
+            <textarea asp-for="Text" class="form-control" cols="40" rows="5">
+        </textarea>
+
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+}
